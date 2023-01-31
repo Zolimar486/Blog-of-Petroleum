@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lato:wght@300&family=Lora:ital,wght@1,400;1,500;1,600&family=Montserrat:wght@100&family=Poppins:wght@300;400;500;600;700&family=Satisfy&family=Varela&family=Varela+Round&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  color:#333;
+  height:100%;
+ 
+}
+
+
+.button-option{
+  width:100%;
+  color:#ffffff;
+  background-color: #252d4a;
+  border-radius:15px;
+  display: flex;
+  padding:5px;
+  justify-content: flex-start;
+  align-items: center;
+  border:5px solid #234668;
+  cursor:pointer;
+  
+}
+
+.button-option:hover{
+  background-color:#234668;
+}
+
+.correct, .correct:hover{
+  background-color: #2f922f;
+}
+
+.incorrect, .incorrect:hover{
+  background-color:#ff3333;
+}
+
+@media only screen and (min-width:600px){
+  .button-option{
+    font-family:"Varela", sans-serif;
+  font-size:15px;
+  }
+  
+}
