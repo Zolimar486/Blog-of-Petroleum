@@ -8,8 +8,8 @@ app.options('*', cors());
 const mongoose = require('mongoose');
 
 const dotenv= require('dotenv');
-const multer = require('multer');
-const path= require('path');
+mongoose.set('strictQuery', false);
+
 
 dotenv.config();
 app.use(express.json({limit:'50mb'}));
@@ -21,6 +21,8 @@ const authRoute = require('./routes/auth');
 const userRoute= require('../api/routes/user')
 const postRouter= require('../api/routes/post');
 const categoryRoute= require('../api/routes/categories');
+
+
 
 mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser: true,
@@ -41,6 +43,9 @@ app.use("/api/auth", authRoute);
 app.use('/api/users', userRoute)
 app.use('/api/posts', postRouter);
 app.use('/api/categories', categoryRoute);
+app.get('/info', (req,res)=> {
+    res.send("connected")
+})
 
 app.listen(PORT, ()=> {
     console.log(`Server Running on Port: http://localhost:${PORT}`)
