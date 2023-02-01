@@ -1,5 +1,6 @@
 const express = require("express");
 const cors= require("cors")
+const path = require("path")
 
 const app= express();
 app.use(cors());
@@ -14,6 +15,11 @@ mongoose.set('strictQuery', false);
 dotenv.config();
 app.use(express.json({limit:'50mb'}));
 app.use(express.urlencoded({extended: true , limit:'50mb'}));
+app.use(express.static(path.join(__dirname, 'build')));
+
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 
