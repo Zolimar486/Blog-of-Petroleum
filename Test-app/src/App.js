@@ -23,7 +23,7 @@ function App() {
 
   return(
     <div className="app">
-    <Router>
+    <Router  basename="/index.html">
       <Navbar/>
       <Switch>
         <Route exact path="/">
