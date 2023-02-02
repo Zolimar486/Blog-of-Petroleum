@@ -2,7 +2,7 @@ import './settings.css';
 import Sidebar from '../../Components/Sidebar/SideBar';
 import { useContext, useState } from 'react';
 import { Context } from '../../context/Context';
-import axios from 'axios'
+import {publiRequest} from '../../config'
 
 
 export default function Settings(){
@@ -62,7 +62,7 @@ export default function Settings(){
         
         
         try{
-           const res= await axios.put(`/users/${user._id}`, updateUser) 
+           const res= await publiRequest.put(`/users/${user._id}`, updateUser) 
             setSuccess(true)
             dispatch({type:"UPDATE_SUCCESS", payload:res.data})
 

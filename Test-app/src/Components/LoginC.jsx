@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import{useRef, useContext } from 'react';
 import{Context} from '../context/Context'
-import axios from 'axios'
+import {publiRequest} from '../config'
 
 const Container = styled.div`
 
@@ -56,7 +56,7 @@ export default function LoginC(){
 
         dispatch({type:"LOGIN_START"});
         try{
-            const res= await axios.post('/auth/login', {
+            const res= await publiRequest.post('/auth/login', {
                 username: userRef.current.value,
                 password: passwordRef.current.value,
 

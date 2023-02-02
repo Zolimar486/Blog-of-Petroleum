@@ -1,6 +1,6 @@
 import './write.css'
 import {useState} from 'react'
-import axios from 'axios'
+import {publiRequest} from '../../config'
 import { useContext } from 'react';
 import {Context} from '../../context/Context'
 import {BsCloudPlus} from 'react-icons/bs'
@@ -51,7 +51,7 @@ export default function Write2() {
     };
    
     try{
-      const res = await axios.post('/posts', newPost);
+      const res = await publiRequest.post('/posts', newPost);
       
       
       window.location.replace('/post/' + res.data._id)
