@@ -48,8 +48,9 @@ app.use("/api/auth", authRoute);
 app.use('/api/users', userRoute)
 app.use('/api/posts', postRouter);
 app.use('/api/categories', categoryRoute);
-app.get('/info', (req,res)=> {
-    res.send("connected")
+
+app.get('/', async(req,res) => {
+    res.status(200).json({message:"Hello from Server"})
 })
 
 app.listen(port, ()=> {
