@@ -17,9 +17,7 @@ app.use(express.json({limit:'50mb'}));
 app.use(express.urlencoded({extended: true , limit:'50mb'}));
 app.use(express.static(path.join(__dirname, 'build')));
 
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
+
 
 
 
@@ -41,7 +39,7 @@ mongoose.connect(process.env.MONGO_URL,{
 
 
 
-const port = process.env.PORT || 5000
+const PORT = 5000
 
 
 app.use("/api/auth", authRoute);
@@ -53,7 +51,7 @@ app.get('/', async(req,res) => {
     res.status(200).json({message:"Hello from Server"})
 })
 
-app.listen(port, ()=> {
-    console.log(`Server Running on Port: http://localhost:${port}`)
+app.listen(PORT, ()=> {
+    console.log(`Server Running on Port: http://localhost:${PORT}`)
     console.log('A Good oportunity give by my powerful God')
 } )
