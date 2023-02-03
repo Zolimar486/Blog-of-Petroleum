@@ -57,7 +57,7 @@ export default function Write2() {
       window.location.replace('/post/' + res.data._id)
      
 
-      console.log(res.data)
+      
 
 
     }catch(err){}
