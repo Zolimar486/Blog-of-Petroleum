@@ -54,7 +54,7 @@ export default function Write2() {
       const res = await publiRequest.post('/posts', newPost);
       
       
-      window.location.replace('/')
+      res.data && window.location.replace('/')
      
 
       
