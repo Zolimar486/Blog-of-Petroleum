@@ -41,8 +41,7 @@ mongoose.connect(process.env.MONGO_URL,{
 
 
 
-
-const PORT=5000;
+const port = process.env.PORT || 5000
 
 
 app.use("/api/auth", authRoute);
@@ -53,7 +52,7 @@ app.get('/info', (req,res)=> {
     res.send("connected")
 })
 
-app.listen(PORT, ()=> {
-    console.log(`Server Running on Port: http://localhost:${PORT}`)
+app.listen(port, ()=> {
+    console.log(`Server Running on Port: http://localhost:${port}`)
     console.log('A Good oportunity give by my powerful God')
 } )
