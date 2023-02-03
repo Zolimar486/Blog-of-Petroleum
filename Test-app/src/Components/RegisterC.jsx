@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useState, useEffect } from 'react';
 import { validateEmail, validatePassowrd, validateUsername } from '../validate';
 import InlineError from './InlineError';
-import axios from 'axios'
+import {publiRequest} from '../config'
 import {BsCloudPlus} from 'react-icons/bs'
 
 
@@ -153,7 +153,7 @@ export default function RegisterC(){
         e.preventDefault();
         setError(false)
         try{
-            const res= await axios.post('https://blog-of-petroleum.onrender.com/api/auth/register', {
+            const res= await publiRequest.post('/auth/register', {
                 username,
                 email,
                 password,

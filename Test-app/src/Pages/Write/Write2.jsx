@@ -72,7 +72,7 @@ export default function Write2() {
         <form className="writeForm" onSubmit={handleSubmit}>
           <div className="writeFormGroup">
             <label htmlFor="fileInput">
-            <BsCloudPlus style ={{fontSize:"25px", marginTop:"9px"}}/>
+            <BsCloudPlus style ={{fontSize:"25px", marginTop:"9px", cursor:"pointer"}}/>
             </label> 
             <input
               type="file"
