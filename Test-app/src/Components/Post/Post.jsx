@@ -89,7 +89,7 @@ export default function Post({post}){
     
 
     return(
-    <Container key={post._id}>
+    <Container>
         {post.photo &&
          <Image src={ post.photo.url}/>
         }
